@@ -1,6 +1,6 @@
 // access key -> bKDCkoe3O0hFs78Xec2wcAujWBvQIOSu6X8d5vYiPWA
 // secret key -> wSkl6jPNIDkzQ9ITL6SsEXF23_5AmzyoL9-d1OUsZbk
-var token = config.API_KEY;
+
 const main = document.querySelector("main");
 const result = document.getElementById("result");
 const input = document.getElementById("weatherSearch");
