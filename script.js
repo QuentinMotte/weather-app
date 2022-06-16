@@ -16,7 +16,7 @@ let dataWeather = [];
 
 async function fetchWeather(city) {
     await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=fr&appid=${token}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=fr&appid=ce8ef7aee843acadc925a10a20420947`
     )
         .then((res) => res.json())
         .then((data) => (dataWeather = data));
