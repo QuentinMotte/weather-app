@@ -1,5 +1,4 @@
-// access key -> bKDCkoe3O0hFs78Xec2wcAujWBvQIOSu6X8d5vYiPWA
-// secret key -> wSkl6jPNIDkzQ9ITL6SsEXF23_5AmzyoL9-d1OUsZbk
+
 
 const main = document.querySelector("main");
 const result = document.getElementById("result");
