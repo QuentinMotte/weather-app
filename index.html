@@ -5,19 +5,46 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Weather-app</title>
+        <link rel="stylesheet" href="./src/index.min.css" />
     </head>
     <body>
-        <form action="">
-            <input type="text" id="weatherSearch" placeholder="Rechercher" />
-            <input type="submit" value="rechercher" id="submit" />
-        </form>
-        <div id="result"></div>
-        <ul id="one"></ul>
-        <ul id="two"></ul>
-        <ul id="three"></ul>
-        <ul id="four"></ul>
-        <ul id="five"></ul>
-
+        <main>
+            <div class="header">
+                <h1>Weather-app</h1>
+                <form action="">
+                    <input
+                        type="text"
+                        id="weatherSearch"
+                        placeholder="Enter city"
+                        autocomplete="off"
+                    />
+                    <input type="submit" value="GO" id="submit" />
+                </form>
+            </div>
+            <div class="principal-information">
+                <div id="result"></div>
+                <div class="today">
+                    <ul id="one"></ul>
+                </div>
+            </div>
+            <canvas
+                id="graph"
+                width="400"
+                height="150"
+                style="color: white"
+            ></canvas>
+            <button id="update">update graph</button>
+            <div class="rest-of-the-days">
+                <ul id="two"></ul>
+                <ul id="three"></ul>
+                <ul id="four"></ul>
+                <ul id="five"></ul>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+        <script type="text/javascript" src="config.js"></script>
         <script src="script.js"></script>
+
+        <script></script>
     </body>
 </html>
