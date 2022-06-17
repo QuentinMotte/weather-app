@@ -33,4 +33,14 @@ img {
     display: flex;
     align-items: center;
     margin: 0 auto;
+    transition: 0.2s;
+    &:hover {
+        background: rgba(255, 255, 255, 0.694);
+    }
+}
+#graph {
+    margin: 50px;
+    background: rgba(255, 255, 255, 0.47);
+    color: white;
+    border-radius: 5px;
 }

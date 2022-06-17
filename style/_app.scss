@@ -1,11 +1,32 @@
 main {
+    .dynamicFav {
+        ul {
+            display: flex;
+            li {
+                color: rgba(255, 255, 255, 0.648);
+                padding: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.587);
+                border-top: none;
+                border-left: none;
+                min-width: 100px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                cursor: pointer;
+                transition: 0.2s;
+                &:hover {
+                    background: rgba(255, 255, 255, 0.296);
+                }
+            }
+        }
+    }
     .header {
         align-items: center;
         justify-content: center;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        padding-top: 50px;
+        padding-top: 30px;
         h1 {
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -14,6 +35,14 @@ main {
             text-shadow: 2px 2px 6px;
         }
         form {
+            #star {
+                i {
+                    font-size: 1.5rem;
+                    color: rgba(255, 255, 255, 0.507);
+                    margin-right: 10px;
+                    margin-left: -40px;
+                }
+            }
             #weatherSearch {
                 padding: 10px 0 10px 3px;
                 font-size: 1.2rem;
@@ -22,8 +51,11 @@ main {
                 border-bottom-left-radius: 5px;
                 border: none;
                 background: rgba(255, 255, 255, 0.208);
+                cursor: pointer;
                 &:focus {
                     outline: none;
+                    caret-color: white;
+                    color: white;
                 }
             }
             #submit {

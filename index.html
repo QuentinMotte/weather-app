@@ -6,12 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Weather-app</title>
         <link rel="stylesheet" href="./src/index.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
         <main>
+            <div class="dynamicFav">
+                <ul id="fav"></ul>
+            </div>
             <div class="header">
                 <h1>Weather-app</h1>
                 <form action="">
+                    <span id="star"><i class="fa-solid fa-star"></i></span>
                     <input
                         type="text"
                         id="weatherSearch"
@@ -30,15 +41,15 @@
             <canvas
                 id="graph"
                 width="400"
-                height="150"
+                height="100"
                 style="color: white"
             ></canvas>
             <button id="update">update graph</button>
             <div class="rest-of-the-days">
-                <ul id="two"></ul>
-                <ul id="three"></ul>
-                <ul id="four"></ul>
-                <ul id="five"></ul>
+                <ul id="two" class="ul-day"></ul>
+                <ul id="three" class="ul-day"></ul>
+                <ul id="four" class="ul-day"></ul>
+                <ul id="five" class="ul-day"></ul>
             </div>
         </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>

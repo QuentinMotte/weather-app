@@ -16,7 +16,7 @@ main {
   margin: 30px auto;
   border-radius: 3px;
   background: rgb(163, 200, 221);
-  box-shadow: 0px 3px 12px;
+  box-shadow: 0px 3px 12px black;
 }
 
 li {
@@ -37,15 +37,45 @@ img {
   display: flex;
   align-items: center;
   margin: 0 auto;
+  transition: 0.2s;
+}
+#update:hover {
+  background: rgba(255, 255, 255, 0.694);
 }
 
+#graph {
+  margin: 50px;
+  background: rgba(255, 255, 255, 0.47);
+  color: white;
+  border-radius: 5px;
+}
+
+main .dynamicFav ul {
+  display: flex;
+}
+main .dynamicFav ul li {
+  color: rgba(255, 255, 255, 0.648);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.587);
+  border-top: none;
+  border-left: none;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  transition: 0.2s;
+}
+main .dynamicFav ul li:hover {
+  background: rgba(255, 255, 255, 0.296);
+}
 main .header {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 main .header h1 {
   text-transform: uppercase;
@@ -53,6 +83,12 @@ main .header h1 {
   padding-bottom: 20px;
   color: whitesmoke;
   text-shadow: 2px 2px 6px;
+}
+main .header form #star i {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.507);
+  margin-right: 10px;
+  margin-left: -40px;
 }
 main .header form #weatherSearch {
   padding: 10px 0 10px 3px;
@@ -62,9 +98,12 @@ main .header form #weatherSearch {
   border-bottom-left-radius: 5px;
   border: none;
   background: rgba(255, 255, 255, 0.208);
+  cursor: pointer;
 }
 main .header form #weatherSearch:focus {
   outline: none;
+  caret-color: white;
+  color: white;
 }
 main .header form #submit {
   font-size: 1.2rem;
