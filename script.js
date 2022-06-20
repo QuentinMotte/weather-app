@@ -23,6 +23,9 @@ async function fetchWeather(city) {
         .then((data) => (dataWeather = data));
     weatherDisplay();
 }
+function randomPictures(city) {
+    document.body.style.background = `url(https://source.unsplash.com/random/?${city}) center/cover`;
+}
 
 function weatherDisplay() {
     //
@@ -82,37 +85,37 @@ function weatherDisplay() {
         case "01d":
             main.style.background = "url(./img/01d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+            document.body.style.background = `url(https://source.unsplash.com/random/?${input.value}) center/cover`;
             break;
         case "02d":
             main.style.background = "url(./img/02d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+            document.body.style.background = `url(https://source.unsplash.com/random/?${city}) center/cover`;
             break;
         case "03d":
             main.style.background = "url(./img/03d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+
             break;
         case "04d":
             main.style.background = "url(./img/04d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+
             break;
         case "09d":
             main.style.background = "url(./img/09d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+
             break;
         case "10d":
             main.style.background = "url(./img/10d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+
             break;
         case "11d":
             main.style.background = "url(./img/11d.jpg) center/cover";
             main.style.color = "black";
-            document.body.style.background = "rgb(209, 232, 243)";
+
             break;
         case "13d":
             main.style.background = "url(./img/13d.jpg) center/cover";
@@ -125,7 +128,7 @@ function weatherDisplay() {
         case "01n":
             main.style.background = "url(./img/01n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -133,7 +136,7 @@ function weatherDisplay() {
         case "02n":
             main.style.background = "url(./img/02n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -142,7 +145,7 @@ function weatherDisplay() {
         case "03n":
             main.style.background = "url(./img/03n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -150,7 +153,7 @@ function weatherDisplay() {
         case "04n":
             main.style.background = "url(./img/04n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -158,7 +161,7 @@ function weatherDisplay() {
         case "09n":
             main.style.background = "url(./img/09n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -166,7 +169,7 @@ function weatherDisplay() {
         case "10n":
             main.style.background = "url(./img/10n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -174,7 +177,7 @@ function weatherDisplay() {
         case "11n":
             main.style.background = "url(./img/11n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -182,7 +185,7 @@ function weatherDisplay() {
         case "13n":
             main.style.background = "url(./img/13n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -190,7 +193,7 @@ function weatherDisplay() {
         case "50n":
             main.style.background = "url(./img/50n.jpg) center/cover";
             main.style.color = "white";
-            document.body.style.background = "rgba(2, 41, 60, 0.896)";
+
             ul.forEach((el) => {
                 el.style.background = "rgba(255, 255, 255, 0.196)";
             });
@@ -200,7 +203,9 @@ function weatherDisplay() {
     }
     //
     // GRAPHIC WITH CHART.JS
+
     const graph = document.getElementById("graph").getContext("2d");
+
     let myChart = new Chart(graph, {
         type: "line",
         data: {
@@ -302,6 +307,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     fetchWeather(input.value);
     console.log(input.value);
+    randomPictures(input.value);
     weatherDisplay();
 });
 //
@@ -314,7 +320,7 @@ favoriteBtn.addEventListener("click", (e) => {
     }
     localStorage.city = dataFavorite;
 
-    // favoriteStore.innerHTML += `<li class="city">${dataWeather.city.name}</li>`;
+    favoriteStore.innerHTML += `<li class="city">${dataWeather.city.name}</li>`;
 });
 var newArr = ["Liège", "Paris", "Tokyo", "Madrid", "Bruxelles", "belgrade"];
 (() => {
@@ -329,14 +335,16 @@ for (let i = 0; i < dataFavorite.length; i++) {
 }
 window.addEventListener("load", () => {
     fetchWeather("liege");
+    randomPictures("liege");
     weatherDisplay();
 });
 let favCity = document.querySelectorAll(".city");
 favCity.forEach((city) => {
     city.addEventListener("click", () => {
+        console.log(city.textContent);
+        randomPictures(city.textContent);
         fetchWeather(city.textContent);
         weatherDisplay();
-        console.log("hello");
     });
 });
 console.log(dataFavorite);
