@@ -52,6 +52,7 @@ img {
 
 main .dynamicFav ul {
   display: flex;
+  flex-wrap: wrap;
 }
 main .dynamicFav ul li {
   color: rgba(255, 255, 255, 0.648);
@@ -59,6 +60,7 @@ main .dynamicFav ul li {
   border: 1px solid rgba(255, 255, 255, 0.587);
   border-top: none;
   border-left: none;
+  max-width: 100px;
   min-width: 100px;
   align-items: center;
   justify-content: center;
@@ -83,6 +85,10 @@ main .header h1 {
   padding-bottom: 20px;
   color: whitesmoke;
   text-shadow: 2px 2px 6px;
+}
+main .header form {
+  display: flex;
+  align-items: center;
 }
 main .header form #star i {
   font-size: 1.5rem;
@@ -164,6 +170,7 @@ main .rest-of-the-days {
 }
 main .rest-of-the-days ul {
   max-width: 110px;
+  margin-bottom: 50px;
   background: rgba(255, 255, 255, 0.601);
   border-radius: 3px;
   padding: 10px 10px 0 10px;

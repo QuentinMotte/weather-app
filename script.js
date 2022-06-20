@@ -306,29 +306,37 @@ form.addEventListener("submit", (e) => {
 });
 //
 //AJOUT DE FAVORIS ???? --> ONLY ONE ??
-var newArr = [];
+
 favoriteBtn.addEventListener("click", (e) => {
     dataFavorite.unshift(dataWeather.city.name);
-    if (dataFavorite.length >= 2) {
+    if (dataFavorite.length >= 7) {
         dataFavorite.pop();
     }
-    window.localStorage.city = dataFavorite;
-    if (window.localStorage.city) {
-        newArr = window.localStorage.city.split(",");
-    }
-    favoriteStore.innerHTML = `<li class="city">${newArr[0]}</li>`;
+    localStorage.city = dataFavorite;
+
+    // favoriteStore.innerHTML += `<li class="city">${dataWeather.city.name}</li>`;
 });
-if (window.localStorage.city) {
-    newArr = window.localStorage.city.split(",");
+var newArr = ["Liège", "Paris", "Tokyo", "Madrid", "Bruxelles", "belgrade"];
+(() => {
+    if (localStorage.city) {
+        dataFavorite = localStorage.city.split(",");
+    } else {
+        dataFavorite = newArr;
+    }
+})();
+for (let i = 0; i < dataFavorite.length; i++) {
+    favoriteStore.innerHTML += `<li class="city">${dataFavorite[i]}</li>`;
 }
-favoriteStore.innerHTML += `<li class="city">${newArr[0]}</li>`;
 window.addEventListener("load", () => {
     fetchWeather("liege");
     weatherDisplay();
 });
-const favCity = document.querySelector(".city");
-favCity.addEventListener("click", () => {
-    fetchWeather(favCity.textContent);
-    weatherDisplay();
-    console.log("hello");
+let favCity = document.querySelectorAll(".city");
+favCity.forEach((city) => {
+    city.addEventListener("click", () => {
+        fetchWeather(city.textContent);
+        weatherDisplay();
+        console.log("hello");
+    });
 });
+console.log(dataFavorite);
